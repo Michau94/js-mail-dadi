@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+
+/* Main */
+
+.container{
+    width: 1200px;
+    margin: 0 auto; 
+    text-align: center;
+}
+
+.dices{
+background-color: rgba( 0,0,0,.5);
+text-align: center;
+width: 250px;
+}

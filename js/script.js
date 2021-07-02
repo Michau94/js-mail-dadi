@@ -37,15 +37,15 @@ console.log('Email inserita: ', userEmail);
 
 //control
 
-
-for (i = 0; i <= mailList.length; i++){
-    
-    if (userEmail === mailList[i]){
-        console.log('email verificata: ', userEmail); 
-        console.log('accesso consentito');
-        displayAccess.innerHTML = 'accesso consentito: ' + userEmail; 
-    }
+if (mailList.includes(userEmail)) {
+    console.log('email verificata: ', userEmail);
+    console.log('accesso consentito');
+    displayAccess.innerHTML = 'accesso consentito: ' + userEmail;
+} else {
+    console.log('accesso non consentito');
+    displayAccess.innerHTML = 'accesso non consentito: ' + userEmail;
 }
+
 
 
 
@@ -64,20 +64,19 @@ displayNumberMachine.innerHTML = 'Machine throws: ' + numberCpu;
 console.log(numberCpu);
 
 //Hooman
-var numberHuman = Math.floor((Math.random() * 6) + 1); 
-displayNumberHooman.innerHTML = 'Human throws: ' +  numberHuman;
-
+var numberHuman = Math.floor((Math.random() * 6) + 1);
+displayNumberHooman.innerHTML = 'Human throws: ' + numberHuman;
 console.log(numberHuman);
 
-if (numberCpu > numberHuman){
+if (numberCpu > numberHuman) {
     console.log('The machine won!');
     displayDice.innerHTML = 'The Machine Won!'
 }
-else if( numberCpu < numberHuman){
+else if (numberCpu < numberHuman) {
     console.log('Hooman won!');
     displayDice.innerHTML = 'The Hooman Won!'
 
-}else{
+} else {
     console.log('Tie! Fight Again!');
     displayDice.innerHTML = 'Tie!!! Fight again!'
 }
@@ -102,6 +101,6 @@ else if( numberCpu < numberHuman){
 
 
 
- 
+
 
 
