@@ -47,7 +47,7 @@ if (userEmail.length < 1 || !userEmail.includes('@')) {
     if (mailList.includes(userEmail)) {
         console.log('email verificata: ', userEmail);
         console.log('accesso consentito');
-        displayAccess.innerHTML = 'accesso consentito: ' + '<strong>' + userEmail + '</strong>';
+        displayAccess.innerHTML = '<i class="fas fa-check-circle"></i>accesso consentito: ' + '<strong>' + userEmail + '</strong>';
         
         //DADI
 
@@ -72,20 +72,20 @@ if (userEmail.length < 1 || !userEmail.includes('@')) {
         //NOW FIGHT 
         if (numberCpu > numberHuman) {
             console.log('The machine won!');
-            displayDice.innerHTML = 'The Machine Won!'
+            displayDice.innerHTML = '<i class="fas fa-robot fa-spin"></i>The Machine Won!<i class="fas fa-robot fa-spin"></i>'
         }
         else if (numberCpu < numberHuman) {
             console.log('Hooman won!');
-            displayDice.innerHTML = 'The Hooman Won!'
+            displayDice.innerHTML = '<i class="fas fa-child"></i>The Hooman Won!<i class="fas fa-child"></i>'
 
         } else {
             console.log('Tie! Fight Again!');
-            displayDice.innerHTML = 'Tie!!! Fight again!'
+            displayDice.innerHTML = '<i class="fas fa-meh"></i>Tie!!! Fight again!<i class="fas fa-meh"></i>'
         }
 
     } else {
         console.log('accesso non consentito');
-        displayAccess.innerHTML = 'accesso negato: ' + userEmail;
+        displayAccess.innerHTML = '<i class="fas fa-times-circle"></i>accesso negato: ' + userEmail;
         alert('No mail no game! ')
 
     }

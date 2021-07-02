@@ -4,12 +4,21 @@
     box-sizing: border-box;
 }
 
+/* UTILS */
+
+.p-10 {
+    padding: 10px;
+}
+
 /* Main */
 
-body{
+body {
     background-image: url(../img/ai.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
     color: azure;
+    height: 100vh;
+    font-family: 'Nova Square', cursive;
 }
 
 .container {
@@ -17,6 +26,14 @@ body{
     margin: 0 auto;
     text-align: center;
 }
+
+.title::before, .title::after {
+    content: "\f522";
+    font-family: "Font Awesome 5 Free";
+}
+
+
+
 
 .access {
     padding: 20px;
@@ -27,7 +44,7 @@ body{
     background-color: rgba( 0, 0, 0, .5);
     text-align: center;
     padding: 20px;
-    width: 250px;
+    width: 300px;
     margin: 0 auto;
     margin-top: 50px;
     border-radius: 10px 20px;
