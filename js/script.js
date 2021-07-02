@@ -70,12 +70,12 @@ if (userEmail.length < 1 || !userEmail.includes('@')) {
         //Cpu
         var numberCpu = Math.floor((Math.random() * 6) + 1);
         displayNumberMachine.innerHTML = 'Machine throws: ' + numberCpu;
-        console.log(numberCpu);
+        console.log('Number CPU: ', numberCpu);
 
         //Hooman
         var numberHuman = Math.floor((Math.random() * 6) + 1);
         displayNumberHooman.innerHTML = 'Human throws: ' + numberHuman;
-        console.log(numberHuman);
+        console.log('Number Human: ' , numberHuman);
 
 
         //NOW FIGHT 
