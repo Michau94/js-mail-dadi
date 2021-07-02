@@ -51,6 +51,40 @@ for (i = 0; i <= mailList.length; i++){
 
 //DADI
 
+var displayDice = document.getElementById('result');
+var displayNumberHooman = document.getElementById('hooman');
+var displayNumberMachine = document.getElementById('machine');
+
+
+//generate number from 1 to 6 
+
+//Cpu
+var numberCpu = Math.floor((Math.random() * 6) + 1);
+displayNumberMachine.innerHTML = 'Machine throws: ' + numberCpu;
+console.log(numberCpu);
+
+//Hooman
+var numberHuman = Math.floor((Math.random() * 6) + 1); 
+displayNumberHooman.innerHTML = 'Human throws: ' +  numberHuman;
+
+console.log(numberHuman);
+
+if (numberCpu > numberHuman){
+    console.log('The machine won!');
+    displayDice.innerHTML = 'The Machine Won!'
+}
+else if( numberCpu < numberHuman){
+    console.log('Hooman won!');
+    displayDice.innerHTML = 'The Hooman Won!'
+
+}else{
+    console.log('Tie! Fight Again!');
+    displayDice.innerHTML = 'Tie!!! Fight again!'
+}
+
+
+
+
 
 
 
