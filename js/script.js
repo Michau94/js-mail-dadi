@@ -44,11 +44,20 @@ if (userEmail.length < 1 || !userEmail.includes('@')) {
 } else {
 
     //control
-    if (mailList.includes(userEmail)) {
-        console.log('email verificata: ', userEmail);
-        console.log('accesso consentito');
+    var granted = false;
+
+    for (i = 0; i < mailList.length; i++) {
+
+        if (userEmail == mailList[i]) {
+            granted = true; 
+        } else {
+        }
+    }
+    if (granted) {
+        //execute game if granted
+        console.log('Granted: ', userEmail);
         displayAccess.innerHTML = '<i class="fas fa-check-circle"></i>accesso consentito: ' + '<strong>' + userEmail + '</strong>';
-        
+
         //DADI
 
         var displayDice = document.getElementById('result');
@@ -82,12 +91,10 @@ if (userEmail.length < 1 || !userEmail.includes('@')) {
             console.log('Tie! Fight Again!');
             displayDice.innerHTML = '<i class="fas fa-meh"></i>Tie!!! Fight again!<i class="fas fa-meh"></i>'
         }
-
     } else {
-        console.log('accesso non consentito');
+        console.log('Denied: ', userEmail);
         displayAccess.innerHTML = '<i class="fas fa-times-circle"></i>accesso negato: ' + userEmail;
         alert('No mail no game! ')
-
     }
 }
 
@@ -98,7 +105,18 @@ if (userEmail.length < 1 || !userEmail.includes('@')) {
 
 
 
+// soluzione ti piace vincere facile XD
+// if (mailList.includes(userEmail)) {
+    //     console.log('email verificata: ', userEmail);
+    //     console.log('accesso consentito');
+    //     displayAccess.innerHTML = '<i class="fas fa-check-circle"></i>accesso consentito: ' + '<strong>' + userEmail + '</strong>';
 
+    // } else {
+        //     console.log('accesso non consentito');
+        //     displayAccess.innerHTML = '<i class="fas fa-times-circle"></i>accesso negato: ' + userEmail;
+        //     alert('No mail no game! ')
+
+// }
 
 
 
