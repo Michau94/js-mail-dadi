@@ -46,7 +46,7 @@ if (userEmail.length < 1 || !userEmail.includes('@')) {
     //control
     var granted = false;
 
-    for (i = 0; i < mailList.length; i++) {
+    for (var i = 0; i < mailList.length; i++) {
 
         if (userEmail == mailList[i]) {
             granted = true; 
@@ -91,6 +91,7 @@ if (userEmail.length < 1 || !userEmail.includes('@')) {
             console.log('Tie! Fight Again!');
             displayDice.innerHTML = '<i class="fas fa-meh"></i>Tie!!! Fight again!<i class="fas fa-meh"></i>'
         }
+        
     } else {
         console.log('Denied: ', userEmail);
         displayAccess.innerHTML = '<i class="fas fa-times-circle"></i>accesso negato: ' + userEmail;
