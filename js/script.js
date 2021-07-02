@@ -25,6 +25,7 @@
 
 
 // MAIL
+
 var displayAccess = document.getElementById('access');
 
 // array consentiti
@@ -35,50 +36,55 @@ var userEmail = prompt('Inserire mail per effettuare accesso!', 'michau@me.com')
 
 console.log('Email inserita: ', userEmail);
 
-//control
 
-if (mailList.includes(userEmail)) {
-    console.log('email verificata: ', userEmail);
-    console.log('accesso consentito');
-    displayAccess.innerHTML = 'accesso consentito: ' + userEmail;
+//Validation
+if (userEmail.length < 1) {
+    alert('Campo Vuoto - Prego inserire Mail')
 } else {
-    console.log('accesso non consentito');
-    displayAccess.innerHTML = 'accesso non consentito: ' + userEmail;
-}
+
+    //control
+    if (mailList.includes(userEmail)) {
+        console.log('email verificata: ', userEmail);
+        console.log('accesso consentito');
+        displayAccess.innerHTML = 'accesso consentito: ' + '<strong>' + userEmail + '</strong>';
+        
+        //DADI
+
+        var displayDice = document.getElementById('result');
+        var displayNumberHooman = document.getElementById('hooman');
+        var displayNumberMachine = document.getElementById('machine');
 
 
+        //generate number from 1 to 6 
 
+        //Cpu
+        var numberCpu = Math.floor((Math.random() * 6) + 1);
+        displayNumberMachine.innerHTML = 'Machine throws: ' + numberCpu;
+        console.log(numberCpu);
 
-//DADI
+        //Hooman
+        var numberHuman = Math.floor((Math.random() * 6) + 1);
+        displayNumberHooman.innerHTML = 'Human throws: ' + numberHuman;
+        console.log(numberHuman);
 
-var displayDice = document.getElementById('result');
-var displayNumberHooman = document.getElementById('hooman');
-var displayNumberMachine = document.getElementById('machine');
+        if (numberCpu > numberHuman) {
+            console.log('The machine won!');
+            displayDice.innerHTML = 'The Machine Won!'
+        }
+        else if (numberCpu < numberHuman) {
+            console.log('Hooman won!');
+            displayDice.innerHTML = 'The Hooman Won!'
 
+        } else {
+            console.log('Tie! Fight Again!');
+            displayDice.innerHTML = 'Tie!!! Fight again!'
+        }
 
-//generate number from 1 to 6 
+    } else {
+        console.log('accesso non consentito');
+        displayAccess.innerHTML = 'accesso negato: ' + userEmail;
 
-//Cpu
-var numberCpu = Math.floor((Math.random() * 6) + 1);
-displayNumberMachine.innerHTML = 'Machine throws: ' + numberCpu;
-console.log(numberCpu);
-
-//Hooman
-var numberHuman = Math.floor((Math.random() * 6) + 1);
-displayNumberHooman.innerHTML = 'Human throws: ' + numberHuman;
-console.log(numberHuman);
-
-if (numberCpu > numberHuman) {
-    console.log('The machine won!');
-    displayDice.innerHTML = 'The Machine Won!'
-}
-else if (numberCpu < numberHuman) {
-    console.log('Hooman won!');
-    displayDice.innerHTML = 'The Hooman Won!'
-
-} else {
-    console.log('Tie! Fight Again!');
-    displayDice.innerHTML = 'Tie!!! Fight again!'
+    }
 }
 
 

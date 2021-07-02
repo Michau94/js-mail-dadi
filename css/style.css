@@ -1,21 +1,34 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
 }
-
 
 /* Main */
 
-.container{
+body{
+    background-image: url(../img/ai.jpg);
+    background-size: cover;
+    color: azure;
+}
+
+.container {
     width: 1200px;
-    margin: 0 auto; 
+    margin: 0 auto;
     text-align: center;
 }
 
-.dices{
-background-color: rgba( 0,0,0,.5);
-text-align: center;
-width: 250px;
+.access {
+    padding: 20px;
+    background-color: rgba( 0, 0, 0, .5);
+}
+
+.dices {
+    background-color: rgba( 0, 0, 0, .5);
+    text-align: center;
+    padding: 20px;
+    width: 250px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 10px 20px;
 }
