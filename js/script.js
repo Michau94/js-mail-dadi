@@ -29,7 +29,7 @@
 var displayAccess = document.getElementById('access');
 
 // array consentiti
-var mailList = ['michau@me.com', 'marco@lanci.it', 'dart@vader.gal']
+var mailList = ['michau@me.com', 'marco@lanci.it', 'dart@vader.gal', 'miao']
 
 // richiesta mail
 var userEmail = prompt('Inserire mail per effettuare accesso!', 'michau@me.com');
@@ -38,8 +38,9 @@ console.log('Email inserita: ', userEmail);
 
 
 //Validation
-if (userEmail.length < 1) {
-    alert('Campo Vuoto - Prego inserire Mail')
+if (userEmail.length < 1 || !userEmail.includes('@')) {
+    alert('Email non valida!!')
+
 } else {
 
     //control
@@ -67,6 +68,8 @@ if (userEmail.length < 1) {
         displayNumberHooman.innerHTML = 'Human throws: ' + numberHuman;
         console.log(numberHuman);
 
+
+        //NOW FIGHT 
         if (numberCpu > numberHuman) {
             console.log('The machine won!');
             displayDice.innerHTML = 'The Machine Won!'
@@ -83,6 +86,7 @@ if (userEmail.length < 1) {
     } else {
         console.log('accesso non consentito');
         displayAccess.innerHTML = 'accesso negato: ' + userEmail;
+        alert('No mail no game! ')
 
     }
 }
